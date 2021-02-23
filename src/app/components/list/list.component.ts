@@ -16,11 +16,14 @@ export class ListComponent implements OnInit {
   cv: Array<Personne> = [];
 
 
-  constructor( private CvService: CvService, private router: Router) {
+
+
+  constructor( private cvService: CvService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.cvs= this.CvService.getListCv();
+    this.cvs= this.cvService.getListCv();
+    console.log(this.cvs);
     // this.initCvList();
   }
 
@@ -42,5 +45,9 @@ export class ListComponent implements OnInit {
     this.selectedCV = cv;
     // console.log(cv);
   }
+
+  // addItem(person: Personne) {
+  //   this.cvs.push(person);
+  // }
 
 }

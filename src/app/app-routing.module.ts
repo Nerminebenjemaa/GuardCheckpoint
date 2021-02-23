@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddCvComponent } from './components/add-cv/add-cv.component';
 import { CvComponent } from './components/cv/cv.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HiredCvComponent } from './components/hired-cv/hired-cv.component';
 import { ListComponent } from './components/list/list.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   
+
+
   {
-    path:'header', component: HeaderComponent
+    path:'login', component: LoginComponent
 
   },
-
   {
-    path:'list', component: ListComponent
-
+    path:'add-cv', component: AddCvComponent
   },
 
   {

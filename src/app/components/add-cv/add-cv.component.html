@@ -1,0 +1,104 @@
+
+
+
+  <div class="container-fluid">
+
+
+    <form #addFormulaire="ngForm" [ngStyle]="{'width':'400px'}">
+    
+    
+      <div  ngModelGroup= "person" 
+      #personData="ngModelGroup">
+        <label>id:</label>
+        <input #id="ngModel"
+        ngModel
+        name="id"
+        required
+        type="number" 
+        class="form-control"
+       
+        > 
+        <!-- <div *ngIf="email.invalid && email.touched" [ngStyle]="{'color': 'red' , 'backgroundColor':'LavenderBlush'}">invalid email</div> -->
+    
+    
+            <!-- [(ngModel)]="email" -->
+    
+         <!-- pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" -->
+    
+    
+    
+    
+        <label>name:</label>
+        <input #name="ngModel"
+        ngModel
+        ngModel name="name"
+        required
+        type="text"
+        class="form-control"
+        
+        > 
+        <!-- <div *ngIf="password.invalid && password.touched" [ngStyle]="{'color': 'red' , 'backgroundColor':'LavenderBlush'}">invalid password</div> -->
+        <label>First Name:</label>
+        <input #firstName="ngModel"
+        ngModel
+        ngModel name="firstName"
+        required
+        type="text"
+        class="form-control"
+        
+        > 
+
+        <label>Age:</label>
+        <input #age="ngModel"
+        ngModel
+        name="age"
+        required
+        type="number" 
+        class="form-control"
+       
+        > 
+
+        <label>CIN:</label>
+        <input #cin="ngModel"
+        ngModel
+        name="cin"
+        required
+        type="number" 
+        class="form-control"
+       
+        >
+
+        <label>job:</label>
+        <input #job="ngModel"
+        ngModel
+        ngModel name="job"
+        required
+        type="text"
+        class="form-control"
+        
+        > 
+
+        <label>path:</label>
+        <input #name="ngModel"
+        ngModel
+        ngModel name="path"
+        type="text"
+        class="form-control"
+        
+        > 
+    </div>
+ 
+    <div *ngIf="personData.invalid && personData.touched" class="alert alert-danger"> Check all entered information</div> 
+    
+    
+    </form>
+    <br>
+    <button class="btn btn-primary"
+    (click)="add(addFormulaire.value)" 
+    [disabled]="addFormulaire.invalid">
+        Add
+    </button>
+    
+     </div>
+     
+    

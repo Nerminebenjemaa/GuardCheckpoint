@@ -1,0 +1,54 @@
+<div class="container-fluid">
+
+
+    <form #loginFormulaire="ngForm">
+    
+    
+      <div  ngModelGroup= "user" 
+      #userDate="ngModelGroup">
+        <label>Email:</label>
+        <input #email="ngModel"
+        ngModel
+        name="email"
+        required
+        email
+        type="text" 
+        class="form-control"
+       
+        > 
+        <div *ngIf="email.invalid && email.touched" [ngStyle]="{'color': 'red' , 'backgroundColor':'LavenderBlush'}">invalid email</div>
+        <br>
+    
+            <!-- [(ngModel)]="email" -->
+    
+         <!-- pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" -->
+    
+    
+    
+    
+        <label>Password:</label>
+        <input #password="ngModel"
+        ngModel
+        ngModel name="password"
+        required
+        type="password"
+        class="form-control"
+        minlength="6"
+        > 
+        <div *ngIf="password.invalid && password.touched" [ngStyle]="{'color': 'red' , 'backgroundColor':'LavenderBlush'}">invalid password</div>
+    
+    </div>
+
+    <div *ngIf="userDate.invalid && userDate.touched" class="alert alert-danger"> Check your Email or your Password</div>
+    
+    
+    </form>
+    
+    <button class="btn btn-primary"
+    (click)="login(loginFormulaire)" 
+    [disabled]="loginFormulaire.invalid">
+        Send
+    </button>
+    
+     </div>
+    
