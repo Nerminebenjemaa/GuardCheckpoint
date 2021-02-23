@@ -1,0 +1,41 @@
+<!-- <div class="card" *ngIf="!!retreivedCV">
+  <img src="{{retreivedCV.path}}" alt="Avatar" style="width:50px; height: 50px">
+  <div class="container">
+    <h4><b>{{retreivedCV.cin}}</b></h4>
+    <h4><b>{{retreivedCV.firstName}} {{retreivedCV.name}}</b></h4>
+    <p>{{retreivedCV.job}}</p>
+  </div>
+</div>
+ -->
+
+ 
+<div *ngIf="!!retreivedCV" class="card" style="width: 450px;  height: 430px; 
+margin-left: 800px; margin-top: -400px;   " >
+  <!-- hidden=true -->
+  <!-- (click)="showhiddentoparent()" -->
+  <div class="card-body">
+      <h3 style="margin-left: 85px; color: grey;"> Curriculum Vitae</h3>
+  <img src="{{retreivedCV.path}}" class="card-img-top" style="height: 120px; width: 120px; margin-top: 10px;clip-path:ellipse(50% 50%);" >
+  
+  
+    <h5 class="card-title" style="margin-left: 200px;margin-top: -120px;"> {{retreivedCV.firstName}} {{retreivedCV.name}}</h5>
+    <p class="card-text" style="margin-left: 200px;">Id : {{retreivedCV.id}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Age : {{retreivedCV.age}}</li>
+    <li class="list-group-item">CIN : {{retreivedCV.cin}}</li>
+    <li class="list-group-item">Job : {{retreivedCV.job}}</li>
+    <li class="list-group-item ">
+      <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-success" (click)="getHiredCV(retreivedCV)">Hire</button>
+      <button type="button" class="btn btn-danger" (click)="DeleteCV(retreivedCV)">Delete</button>
+    </div>
+    </li>
+   
+  
+  </ul>
+  
+</div>
+
+
+<!-- <app-hired-cv></app-hired-cv> -->
