@@ -18,6 +18,9 @@ export class DetailComponent implements OnInit {
     private cvService : CvService) { }
 
   ngOnInit(): void {
+    this.cvService.selectSubjectItem.subscribe(
+      (personne) => { this.retreivedCV= personne}
+    );
   
   }
 

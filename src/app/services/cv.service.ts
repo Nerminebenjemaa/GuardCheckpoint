@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Personne } from '../models/Personne';
 
 @Injectable({
@@ -8,6 +9,8 @@ export class CvService {
 
 
 public cvs: Array<Personne> = [];
+
+selectSubjectItem = new Subject<Personne>();
 
 
   constructor() { 
@@ -42,6 +45,12 @@ this.cvs.push({id: 3, name:'My Code', firstName:'Go', age:26, cin:12345678, job:
 
 
     
+  }
+
+  clickOnItem(personne : Personne){
+    this.selectSubjectItem.next(personne);
+
+
   }
 
 

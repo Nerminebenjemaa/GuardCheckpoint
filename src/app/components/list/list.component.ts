@@ -11,9 +11,11 @@ import {Personne} from '../../models/Personne';
 export class ListComponent implements OnInit {
 
   cvs: Personne [] = [];
-  selectedCV!: Personne;
+  // selectedCV!: Personne;
 
   cv: Array<Personne> = [];
+
+  personne = new Personne();
 
 
 
@@ -42,12 +44,13 @@ export class ListComponent implements OnInit {
   getCvDetails(cv: Personne): void {
     // const Link=['detail'];
     // this.router.navigate([Link]);
-    this.selectedCV = cv;
+    // // this.selectedCV = cv;
     // console.log(cv);
-  }
+
+    this.cvService.clickOnItem(this.personne);
 
   // addItem(person: Personne) {
   //   this.cvs.push(person);
-  // }
+  }
 
 }
