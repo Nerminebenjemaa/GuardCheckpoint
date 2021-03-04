@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AddCvComponent } from './components/add-cv/add-cv.component';
+import {HttpClientModule} from "@angular/common/http";
+import { HttpComponent } from './components/http/http.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { AddCvComponent } from './components/add-cv/add-cv.component';
     ErrorComponent,
     HeaderComponent,
     LoginComponent,
-    AddCvComponent
+    AddCvComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

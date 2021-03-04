@@ -24,9 +24,17 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cvs= this.cvService.getListCv();
-    console.log(this.cvs);
+    // this.cvs= this.cvService.getListCv();
+    // console.log(this.cvs);
     // this.initCvList();
+
+    this.cvService.getPersonne().subscribe(
+      (personnes)=> this.cvs = personnes,
+      (erreur)=> {
+        this.cvs = this.cvService.getListCv();
+        alert('fake data');
+      }
+    );
   }
 
 
