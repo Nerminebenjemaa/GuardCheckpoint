@@ -15,6 +15,7 @@ import { AddCvComponent } from './components/add-cv/add-cv.component';
 import {HttpClientModule} from "@angular/common/http";
 import { HttpComponent } from './components/http/http.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { HttpComponent } from './components/http/http.component';
     HeaderComponent,
     LoginComponent,
     AddCvComponent,
-    HttpComponent
+    HttpComponent,
+
   ],
   imports: [
     BrowserModule,

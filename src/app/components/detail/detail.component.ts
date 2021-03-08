@@ -14,7 +14,7 @@ export class DetailComponent implements OnInit {
   
   LINK=['cv'];
   
-  retreivedCV: Personne;
+  retreivedCV: Personne = new Personne();
 
   constructor(private hiringService : HiringService,
     private cvService : CvService,

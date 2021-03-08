@@ -7,21 +7,25 @@ import { HeaderComponent } from './components/header/header.component';
 import { HiredCvComponent } from './components/hired-cv/hired-cv.component';
 import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
+import { ExampleGuard } from './guards/example.guard';
+import { LoginGuard } from './guards/login.guard';
+import { NotLoggedGuard } from './guards/not-logged.guard';
 
 const routes: Routes = [
-  
 
 
   {
-    path:'login', component: LoginComponent
+    path:'login', component: LoginComponent , canActivate:[NotLoggedGuard]
 
   },
+
+
   {
-    path:'add-cv', component: AddCvComponent
+    path:'add-cv', component: AddCvComponent , canActivate:[LoginGuard]
   },
 
   {
-    path:'hiredcv', component: HiredCvComponent
+    path:'hiredcv', component: HiredCvComponent , canActivate:[ExampleGuard]
 
   },
 
