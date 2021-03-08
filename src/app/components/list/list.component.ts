@@ -53,9 +53,9 @@ export class ListComponent implements OnInit {
     // const Link=['detail'];
     // this.router.navigate([Link]);
     // // this.selectedCV = cv;
-    // console.log(cv);
+    console.log(cv);
 
-    this.cvService.clickOnItem(this.personne);
+    this.cvService.clickOnItem(cv);
 
   // addItem(person: Personne) {
   //   this.cvs.push(person);

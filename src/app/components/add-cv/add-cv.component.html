@@ -7,9 +7,9 @@
     <form #addFormulaire="ngForm" [ngStyle]="{'width':'400px'}">
     
     
-      <div  ngModelGroup= "person" 
-      #personData="ngModelGroup">
-        <label>id:</label>
+      <!-- <div  ngModelGroup= "person" 
+      #personData="ngModelGroup"> -->
+        <!-- <label>id:</label>
         <input #id="ngModel"
         ngModel
         name="id"
@@ -17,7 +17,7 @@
         type="number" 
         class="form-control"
        
-        > 
+        >  -->
         <!-- <div *ngIf="email.invalid && email.touched" [ngStyle]="{'color': 'red' , 'backgroundColor':'LavenderBlush'}">invalid email</div> -->
     
     
@@ -39,25 +39,14 @@
         > 
         <!-- <div *ngIf="password.invalid && password.touched" [ngStyle]="{'color': 'red' , 'backgroundColor':'LavenderBlush'}">invalid password</div> -->
         <label>First Name:</label>
-        <input #firstName="ngModel"
+        <input #firstname="ngModel"
         ngModel
-        ngModel name="firstName"
+        ngModel name="firstname"
         required
         type="text"
         class="form-control"
         
         > 
-
-        <label>Age:</label>
-        <input #age="ngModel"
-        ngModel
-        name="age"
-        required
-        type="number" 
-        class="form-control"
-       
-        > 
-
         <label>CIN:</label>
         <input #cin="ngModel"
         ngModel
@@ -86,15 +75,29 @@
         class="form-control"
         
         > 
-    </div>
+        <label>Age:</label>
+        <input #age="ngModel"
+        ngModel
+        name="age"
+        required
+        type="number" 
+        class="form-control"
+       
+        > 
+
+        
+
+
+       
+    <!-- </div>
  
     <div *ngIf="personData.invalid && personData.touched" class="alert alert-danger"> Check all entered information</div> 
-    
+     -->
     
     </form>
     <br>
     <button class="btn btn-primary"
-    (click)="add(addFormulaire.value)" 
+    (click)="addPersonne(addFormulaire.value)" 
     [disabled]="addFormulaire.invalid">
         Add
     </button>

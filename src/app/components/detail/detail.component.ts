@@ -11,11 +11,10 @@ import {Personne} from '../../models/Personne';
 })
 export class DetailComponent implements OnInit {
 
-  personne = new Personne;
+  
   LINK=['cv'];
-
-
-  @Input() retreivedCV: Personne = new Personne();
+  
+  retreivedCV: Personne;
 
   constructor(private hiringService : HiringService,
     private cvService : CvService,
@@ -23,9 +22,9 @@ export class DetailComponent implements OnInit {
     private router : Router ) { }
     
   ngOnInit(): void {
-    // this.cvService.selectSubjectItem.subscribe(
-    //   (personne) => { this.retreivedCV= personne}
-    // );
+    this.cvService.selectSubjectItem.subscribe(
+      (personne) => { this.retreivedCV= personne}
+    );
  
     this.activatedRroute.params.subscribe(
       (params)=>{
@@ -58,6 +57,25 @@ export class DetailComponent implements OnInit {
   DeleteCV(cv: Personne): void{
 
     this.cvService.deleteCv(this.retreivedCV)
+
+  }
+
+
+  DeletePersonne(id :number): void{
+    console.log(this.retreivedCV.id);
+
+    this.cvService.deletePersonne(this.retreivedCV.id).subscribe(
+      
+      (success)=>{
+       
+        console.log(success)
+        const Link=["list"];
+        this.router.navigate(Link);
+      },
+      // (erreur)=> console.log(erreur)
+    );
+
+
 
   }
 

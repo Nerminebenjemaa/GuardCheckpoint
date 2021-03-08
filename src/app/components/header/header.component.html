@@ -10,7 +10,8 @@
           <a class="nav-link" [routerLink]="['login']"  routerLinkActive="active">login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['add-cv']"  routerLinkActive="active">Add</a>
+          <a class="nav-link" [routerLink]="['add-cv']"  routerLinkActive="active" >Add</a>
+          <!-- *ngIf="authentificationService.isAuthentificated()" -->
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['cv']"  routerLinkActive="active">cv</a>

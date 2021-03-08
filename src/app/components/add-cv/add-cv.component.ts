@@ -25,16 +25,33 @@ export class AddCvComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  add(person :Personne){
-    // const id= this.cvs[this.cvs.length - 1].id;
-    // person.id=id + 1;
-    const Link=["list"];
-    // console.log(addFormulaire)
-    this.cvService.addCv(this.addedCV);
-    // this.addItemEvent.emit(this.addedCV);
+  // add(person :Personne){
+  //   // const id= this.cvs[this.cvs.length - 1].id;
+  //   // person.id=id + 1;
+  //   const Link=["list"];
+  //   // console.log(addFormulaire)
+  //   this.cvService.addCv(this.addedCV);
+  //   // this.addItemEvent.emit(this.addedCV);
  
     
-    this.router.navigate(Link);
+  //   this.router.navigate(Link);
     
+  // }
+
+
+  addPersonne(person: Personne){
+   
+   
+    
+    this.cvService.addPersonne(person).subscribe(
+      (success)=>{
+        console.log(success)
+        const Link=['cv'];
+        this.router.navigate(Link);
+        
+      }
+    );
+
+
   }
 }

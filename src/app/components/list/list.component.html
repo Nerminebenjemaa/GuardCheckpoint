@@ -1,12 +1,16 @@
-<!-- <div *ngFor="let item of cvs; let i=index">
-  <p (click)="getCvDetails(item)">CV {{i+1}}</p>
-</div>
- -->
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6">
+
 
 
 
 <h1>List of CVs</h1>
-<div *ngFor="let item of cvs; let i=index" class="card mb-3" style="width: 600px; height: 100px; margin-top: 30px; ">
+<div *ngFor="let item of cvs; let i=index" class="card mb-3">
   <div class="row g-0">
     <div  class="col-md-4">
       <img src="{{item.path}}"  style="width: 100px; height: 98px;">
@@ -20,10 +24,18 @@
     </div>
   </div>
 </div>
-<app-detail ></app-detail>
-<!-- <app-add-cv (addItemEvent)="addItem($event)"></app-add-cv> -->
+</div>
 
-<!-- [retreivedCV]="selectedCV" -->
+
+<div class="col-md-6">
+
+
+<app-detail></app-detail>
+</div>
+
+</div>
+</div>
+
 
 
 
